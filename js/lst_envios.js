@@ -47,33 +47,80 @@ function Permisos() {
 
 }
 
+//function EventosListado() {
+
+//    $("#tbDetails tbody").click(function (event) {
+
+//        $(tableElement.fnSettings().aoData).each(function () {
+//            $(this.nTr).removeClass('row_selected');
+//        });
+//        $(event.target.parentNode).addClass('row_selected');
+
+//    });
+
+//    $("#tbDetails tbody").dblclick(function (event) {
+
+//        $(tableElement.fnSettings().aoData).each(function () {
+//            $(this.nTr).removeClass('row_selected');
+//        });
+//        $(event.target.parentNode).addClass('row_selected');
+//        if ($("#btn_editar").hasClass('hide')) {
+//            Ver()
+//        }
+//        else {
+//            Editar()
+//        }
+//    });
+
+//}
+function SeleccionarEnvios() {
+    var contador = 0
+    var id = ""
+    $('#tbDetails tr').each(function () {
+        SeleccionarEnvios
+        if ($(this).hasClass('row_selected')) {
+            try {
+                id += ',' + this.id;
+                contador++
+            } catch (e) {
+                $("#dv_error").html("Error. " + e);
+                $("#dv_error").show();
+                setTimeout(function () { $('#dv_error_modal3').hide(); }, 10000);
+                return false;
+            }
+        }
+    });
+    if (id == "") {
+        $("#dv_error").html("Debe seleccionar al menos un registro.");
+        $("#dv_error").show();
+        setTimeout(function () { $('#dv_error').hide(); }, 10000);
+        return false;
+    }
+    else {
+        alert(contador);
+        if (contador > 1) {
+            $("#id").val(id);
+            $("#hd_contador").val(id);
+            NuevoSeguimiento()
+        } else {
+            $("#id").val(id);
+            Seguimiento()
+        }
+    }
+}
+
 function EventosListado() {
 
     $("#tbDetails tbody").click(function (event) {
-
-        $(tableElement.fnSettings().aoData).each(function () {
-            $(this.nTr).removeClass('row_selected');
-        });
-        $(event.target.parentNode).addClass('row_selected');
-
-    });
-
-    $("#tbDetails tbody").dblclick(function (event) {
-
-        $(tableElement.fnSettings().aoData).each(function () {
-            $(this.nTr).removeClass('row_selected');
-        });
-        $(event.target.parentNode).addClass('row_selected');
-        if ($("#btn_editar").hasClass('hide')) {
-            Ver()
+        var classNamex = $(event.target.parentNode).attr('class');
+        if (classNamex == 'even row_selected' || classNamex == 'odd row_selected') {
+            $(event.target.parentNode).removeClass('row_selected');
         }
         else {
-            Editar()
+            $(event.target.parentNode).addClass('row_selected');
         }
     });
-
 }
-
 var oTable;
 function CargarListados() {
     //var oTable;

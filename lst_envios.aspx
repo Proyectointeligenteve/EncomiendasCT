@@ -117,6 +117,7 @@
             <form id="form1" class="form-horizontal" role="form">
                 <input type="hidden" id="id" name="id" />
                 <input type="hidden" id="hd_estatus" name="hd_estatus" />
+                <input type="hidden" id="hd_contador" name="hd_contador" />
 
                 <div class="row-fluid">
                     <div class="span12">
