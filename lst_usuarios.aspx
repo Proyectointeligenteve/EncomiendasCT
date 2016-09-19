@@ -86,7 +86,7 @@
     <div class="remodal" data-remodal-id="modal" style="background-color:#013b63;font-size:14px !important">
 
         <div class="modal-header">
-            <h4 class="modal-title" id="myModalLabel">Formulario de Usuarios</h4>
+            <h4 class="modal-title" id="myModalLabel" style="color:white">Formulario de Usuarios</h4>
         </div>
         <div class="modal-body">
             <form id="form1" class="form-horizontal" role="form">
@@ -95,7 +95,7 @@
                 <div class="row-fluid">
                     <div class="span6">
                         <div class="control-group">
-                            <label class="col-sm-2 control-label" for="Nombre">Nombre</label>
+                            <label class="col-sm-2 control-label" for="Nombre" style="color:white">Nombre</label>
                             <div class="col-sm-10">
                                 <input type="text" id="Nombre" name="Nombre" class="form-control" />
                             </div>
@@ -105,7 +105,7 @@
 
                     <div class="span6">
                         <div class="control-group">
-                            <label class="col-sm-2 control-label" for="Apellido">Apellido</label>
+                            <label class="col-sm-2 control-label" for="Apellido" style="color:white">Apellido</label>
                             <div class="col-sm-10">
                                 <input type="text" id="Apellido" name="Apellido" class="form-control" />
                             </div>
@@ -118,7 +118,7 @@
                 <div class="row-fluid">
                     <div class="span6">
                         <div class="control-group">
-                            <label class="col-sm-2 control-label" for="Usuario">Usuario</label>
+                            <label class="col-sm-2 control-label" for="Usuario" style="color:white">Usuario</label>
                             <div class="col-sm-10">
                                 <input type="text" id="Usuario" name="Usuario" class="form-control" />
                             </div>
@@ -128,7 +128,7 @@
 
                     <div class="span6">
                         <div class="control-group">
-                            <label class="col-sm-2 control-label" for="Clave">Clave</label>
+                            <label class="col-sm-2 control-label" for="Clave" style="color:white">Clave</label>
                             <div class="col-sm-10">
                                 <input type="password" id="Clave" name="Clave" class="form-control" />
                             </div>
@@ -141,7 +141,7 @@
                 <div class="row-fluid">
                     <div class="span6">
                         <div class="control-group">
-                            <label class="col-sm-2 control-label" for="rol">Rol</label>
+                            <label class="col-sm-2 control-label" for="rol" style="color:white">Rol</label>
                             <div class="col-sm-10">
                                 <select id="rol" name="rol" class="form-control"></select>
                                 <input type="hidden" id="hdf_RolId" name="hdf_RolId" value="0" />
@@ -152,7 +152,7 @@
 
                     <div class="span6">
                         <div class="control-group">
-                            <label class="col-sm-2 control-label" for="Email">Email</label>
+                            <label class="col-sm-2 control-label" for="Email" style="color:white">Email</label>
                             <div class="col-sm-10">
                                 <input type="text" id="Email" name="Email" class="form-control" />
                             </div>
@@ -166,7 +166,7 @@
 
                     <div class="span6">
                         <div class="control-group">
-                            <label class="col-sm-2 control-label" for="Unidad">Activo</label>
+                            <label class="col-sm-2 control-label" for="Unidad" style="color:white">Activo</label>
                             <div class="col-sm-10">
                                 <input type="checkbox" id="Activo" name="Activo" class="form-control" />
                             </div>
@@ -176,7 +176,7 @@
 
                     <div class="span6">
                         <div class="control-group">
-                            <label class="col-sm-2 control-label" for="Estatus">Cambiar Clave</label>
+                            <label class="col-sm-2 control-label" for="Estatus" style="color:white">Cambiar Clave</label>
                             <div class="col-sm-10">
                                 <input type="checkbox" id="cambiarclave" name="cambiarclave" class="form-control" />
                             </div>

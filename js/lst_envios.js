@@ -23,10 +23,10 @@ function Permisos() {
 
             if (response.rslt == 'exito') {
                 if (response.Agregar == 1) { $("#btn_agregar").removeClass('hide'); }
-                if (response.Ver == 1) { $("#btn_ver").removeClass('hide'); }
+                //if (response.Ver == 1) { $("#btn_ver").removeClass('hide'); }
                 if (response.Editar == 1) { $("#btn_editar").removeClass('hide'); }
                 if (response.Actualizar == 1) { $("#btn_actualizar").removeClass('hide'); }
-                if (response.Eliminar == 1) { $("#btn_eliminar").removeClass('hide'); }
+                if (response.Anular == 1) { $("#btn_anular").removeClass('hide'); }
                 if (response.Agregar_Seguimiento == 1) { $("#Agregar_Seguimiento").removeClass('hide'); }
 
             }
@@ -47,33 +47,7 @@ function Permisos() {
 
 }
 
-//function EventosListado() {
-
-//    $("#tbDetails tbody").click(function (event) {
-
-//        $(tableElement.fnSettings().aoData).each(function () {
-//            $(this.nTr).removeClass('row_selected');
-//        });
-//        $(event.target.parentNode).addClass('row_selected');
-
-//    });
-
-//    $("#tbDetails tbody").dblclick(function (event) {
-
-//        $(tableElement.fnSettings().aoData).each(function () {
-//            $(this.nTr).removeClass('row_selected');
-//        });
-//        $(event.target.parentNode).addClass('row_selected');
-//        if ($("#btn_editar").hasClass('hide')) {
-//            Ver()
-//        }
-//        else {
-//            Editar()
-//        }
-//    });
-
-//}
-function SeleccionarEnvios() {
+function SeleccionarEnvios(tipo) {
     var contador = 0
     var id = ""
     $('#tbDetails tr').each(function () {
@@ -97,14 +71,18 @@ function SeleccionarEnvios() {
         return false;
     }
     else {
-        alert(contador);
-        if (contador > 1) {
-            $("#id").val(id);
-            $("#hd_contador").val(id);
-            NuevoSeguimiento()
+        alert(id);
+        $("#id").val(id);
+       
+        if (tipo == 1) {
+            if (contador > 1) {
+                $("#hd_contador").val(id);
+                NuevoSeguimiento()
+            } else {
+                Seguimiento()
+            }
         } else {
-            $("#id").val(id);
-            Seguimiento()
+            Confirmar()
         }
     }
 }
@@ -298,50 +276,51 @@ function Editar() {
 
 
 function Confirmar() {
-    var id = '';
-    $('#tbDetails tr').each(function () {
-        if ($(this).hasClass('row_selected')) {
-            id = this.id;
-            $("#id").val(id);
-        }
-    });
+    //var id = $("#id").val(id);
+    //$('#tbDetails tr').each(function () {
+    //    if ($(this).hasClass('row_selected')) {
+    //        id = this.id;
+    //        $("#id").val(id);
+    //    }
+    //});
 
-    if (id == '') {
-        $("#dv_error").html('Seleccione un registro');
-        $("#dv_error").show();
-        setTimeout(function () { $('#dv_error').hide(); }, 10000);
-        return false;
-    }
+    //if (id == '') {
+    //    $("#dv_error").html('Seleccione un registro');
+    //    $("#dv_error").show();
+    //    setTimeout(function () { $('#dv_error').hide(); }, 10000);
+    //    return false;
+    //}
 
     //$('#deletemodal').modal(options);
     //$('#deletemodal').on('shown.bs.modal', function () {
-
     //})
-    deletemodal = $.remodal.lookup[$('[data-remodal-id=deletemodal]').data('remodal')];
-    deletemodal.open();
+    
+    anularmodal = $.remodal.lookup[$('[data-remodal-id=anularmodal]').data('remodal')];
+    anularmodal.open();
 }
 
-function Eliminar() {
-    var id
-    $('#tbDetails tr').each(function () {
-        if ($(this).hasClass('row_selected')) {
-            id = this.id;
-            $("#id").val(id);
-        }
-    });
+function anular() {
+    var id = $("#id").val();
+    //$('#tbDetails tr').each(function () {
+    //    if ($(this).hasClass('row_selected')) {
+    //        id = this.id;
+    //        $("#id").val(id);
+    //    }
+    //});
 
+    
     $.ajax({
         type: "POST",
-        url: "lst_envios.aspx?fn=eliminar",
+        url: "lst_envios.aspx?fn=anular",
         data: '{"id":"' + id + '"}',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (response) {
             //$('#deletemodal').modal('hide');
-            deletemodal.close();
+            anularmodal.close();
             if (response.rslt == 'exito') {
                 $("#dv_error").hide()
-                $("#dv_mensaje").html('El registro ha sido eliminado.');
+                $("#dv_mensaje").html('El registro ha sido Anulado.');
                 $("#dv_mensaje").show();
                 setTimeout(function () { $('#dv_mensaje').hide(); }, 10000);
                 $('#tbDetails').dataTable().fnDestroy();
@@ -356,9 +335,9 @@ function Eliminar() {
         },
         error: function () {
             //$('#deletemodal').modal('hide');
-            deletemodal.close();
+            anularmodal.close();
             $("#dv_mensaje").hide();
-            $("#dv_error").html('Error de comunicación con el servidor. Función Eliminar().');
+            $("#dv_error").html('Error de comunicación con el servidor. Función Anular().');
             $("#dv_error").show();
             setTimeout(function () { $('#dv_error').hide(); }, 10000);
         }

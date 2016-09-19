@@ -33,7 +33,8 @@
             <option value ="1">Ver En Transito</option>
             <option value ="2">Ver Entregados</option>
             <option value ="3">Ver Extraviados</option>
-            <option value ="4">Ver Todos</option>
+            <option value ="4">Ver Anulados</option>
+            <option value ="5">Ver Todos</option>
             </select></div>
         <div class="hr">
             <hr />
@@ -43,9 +44,9 @@
                 <img src='img/loading2.gif' class="loading" />
                 <button class="btn btn-default hide" id="btn_agregar" onclick="Nuevo();"><span class="glyphicon glyphicon-plus"></span>&nbsp;Nuevo</button>
                 <button class="btn btn-default hide" id="btn_editar" onclick="Editar();"><span class="glyphicon glyphicon-edit"></span>&nbsp;Editar</button>
-                <button class="btn btn-default hide" id="btn_actualizar" onclick="Seguimiento();"><span class="glyphicon glyphicon-list"></span>&nbsp;Actualizar</button>
-                <button class="btn btn-default hide" id="btn_anular" onclick="ConfirmarAnular();"><span class="glyphicon glyphicon-edit"></span>&nbsp;Activar/Inactivar</button>
-                <button class="btn btn-default hide" id="btn_eliminar" onclick="ConfirmarEliminar();"><span class="glyphicon glyphicon-remove"></span>&nbsp;Eliminar</button>
+                <button class="btn btn-default hide" id="btn_actualizar" onclick="SeleccionarEnvios(1);"><span class="glyphicon glyphicon-list"></span>&nbsp;Actualizar</button>
+                <button class="btn btn-default hide" id="btn_anular" onclick="SeleccionarEnvios(0);"><span class="glyphicon glyphicon-edit"></span>&nbsp;Activar/Inactivar</button>
+                <%--<button class="btn btn-default hide" id="btn_eliminar" onclick="SeleccionarEnvios(0);"><span class="glyphicon glyphicon-remove"></span>&nbsp;Eliminar</button>--%>
             </div>
         </div>
         <style>
