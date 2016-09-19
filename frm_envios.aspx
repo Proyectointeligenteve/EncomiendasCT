@@ -23,7 +23,7 @@
 
         <div class="modal-header">
             <div align="left">
-                <h4 class="modal-title" id="H1">Formulario de Envios</h4>
+                <h4 class="modal-title" id="H1" style="color:white">Formulario de Envios</h4>
             </div>
             <div align="right">
                 <button type="button" class="btn btn-default" data-dismiss="modal" onclick="window.location.href='lst_envios.aspx'">Volver</button>
@@ -36,7 +36,7 @@
            
              <div class="row-fluid">
                     <div class="span6">
-                        <label class="span3 control-label" for="Codigo">Codigo</label>
+                        <label class="span3 control-label" for="Codigo"style="color:white">Codigo</label>
                         <div class="span9">
                             <div class="input-group">
                                 <input type="text" id="Codigo" name="Codigo" class="form-control" disabled="disabled" />
@@ -44,7 +44,7 @@
                         </div>
                     </div>
                 <div class="span6 hide">
-                    <label class="span3 control-label" for="TotalR">Total Envio&nbsp;</label>
+                    <label class="span3 control-label" for="TotalR"style="color:white">Total Envio&nbsp;</label>
                     <div class="span9">
                         <div class="input-group">
                             <input type="text" id="TotalR" name="TotalR" class="form-control" value="0" />
@@ -56,13 +56,13 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="control-group">
-                        <label class="span12 control-label" for="Codigo" style ="font-size :14px !important; text-align :left !important"><b>EMISOR</b></label>
+                        <label class="span12 control-label" for="Codigo" style ="color:white;font-size :14px !important; text-align :left !important"><b>EMISOR</b></label>
                     </div>
                 </div>
             </div>
             <div class="row-fluid">
                 <div class="span6">
-                        <label class="span3 control-label" for="IdentificadorEmisor">Identificador</label>
+                        <label class="span3 control-label" for="IdentificadorEmisor" style="color:white">Identificador</label>
                         <div class="span9">
                             <div class="input-group">
                                 <div class="input-group-btn">
@@ -75,7 +75,7 @@
                         </div>
                 </div>
                 <div class="span6">
-                    <label class="span3 control-label" for="NombreE">Nombre</label>
+                    <label class="span3 control-label" for="NombreE" style="color:white">Nombre</label>
                     <div class="span9">
                         <div class="input-group">
                             <input type="text" id="NombreE" name="NombreE" class="form-control" />
@@ -86,7 +86,7 @@
             <br />
             <div class="row-fluid">   
                 <div class="span6">
-                    <label class="span3 control-label" for="PaisE">Pais</label>
+                    <label class="span3 control-label" for="PaisE" style="color:white">Pais</label>
                     <div class="span9">
                         <div class="input-group">
                         <select id="PaisE" name="PaisE" class="form-control" onchange="CargarEstadosE()"></select>
@@ -100,13 +100,13 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="input-group">
-                        <label class="span12 control-label" for="Codigo" style ="font-size :14px !important; text-align :left !important"><b>RECEPTOR</b></label>
+                        <label class="span12 control-label" for="Codigo" style ="color:white; font-size :14px !important; text-align :left !important"><b>RECEPTOR</b></label>
                     </div>
                 </div>
             </div>
             <div class="row-fluid">
                 <div class="span6">
-                    <label class="span3 control-label" for="IdentificadorReceptor">Identificador</label>
+                    <label class="span3 control-label" for="IdentificadorReceptor" style="color:white">Identificador</label>
                     <div class="span9">
                         <div class="input-group">
                             <div class="input-group-btn">
@@ -119,7 +119,7 @@
                     </div>
                 </div>
                 <div class="span6">
-                    <label class="span3 control-label" for="NombreR">Nombre</label>
+                    <label class="span3 control-label" for="NombreR" style="color:white">Nombre</label>
                     <div class="span9">
                         <div class="input-group">
                             <input type="text" id="NombreR" name="NombreR" class="form-control" />
@@ -130,7 +130,7 @@
             <br />
             <div class="row-fluid">   
                 <div class="span6">
-                    <label class="span3 control-label" for="PaisR">Pais</label>
+                    <label class="span3 control-label" for="PaisR" style="color:white">Pais</label>
                     <div class="span9">
                         <div class="input-group">
                             <select id="PaisR" name="PaisR" class="form-control" onchange="CargarEstadosR()"></select>
@@ -153,7 +153,7 @@
             </div>
             <div class="row-fluid">
                 <div class="span6">
-                    <label class="span3 control-label" for="Peso">Peso</label>
+                    <label class="span3 control-label" for="Peso" style="color:white">Peso</label>
                     <div class="span9">
                         <div class="input-group">
                             <input type="text" id="PesoP" name="PesoP" class="form-control" />
@@ -161,7 +161,7 @@
                     </div>
                 </div>
                 <div class="span6">
-                    <label class="span3 control-label" for="Volumen">Volumen</label>
+                    <label class="span3 control-label" for="Volumen" style="color:white">Volumen</label>
                     <div class="span9">
                         <div class="input-group">
                             <input type="text" id="VolumenP" name="VolumenP" class="form-control" />
@@ -171,7 +171,7 @@
             </div>
             <div class="row-fluid">
                 <div class="span6">
-                    <label class="span3 control-label" for="DescripcionP">Descripcion</label>
+                    <label class="span3 control-label" for="DescripcionP" style="color:white">Descripcion</label>
                     <div class="span9">
                         <div class="input-group">
                             <textarea id="DescripcionP" rows="2" name="DescripcionP" maxlength="250" style ="width:100%" class="form-control"></textarea>
@@ -179,7 +179,7 @@
                     </div>
                 </div>
                 <div class="span6">
-                    <label class="span3 control-label" for="Costo">Costo</label>
+                    <label class="span3 control-label" for="Costo" style="color:white">Costo</label>
                     <div class="span9">
                         <div class="input-group">
                             <input type="text" id="CostoP" name="CostoP" class="form-control" />
