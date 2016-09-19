@@ -83,7 +83,7 @@
             </tbody>
         </table>
     </div>
-    <div class="remodal" data-remodal-id="modal">
+    <div class="remodal" data-remodal-id="modal" style="background-color:#013b63;font-size:14px !important">
 
         <div class="modal-header">
             <h4 class="modal-title" id="myModalLabel">Formulario de Usuarios</h4>
